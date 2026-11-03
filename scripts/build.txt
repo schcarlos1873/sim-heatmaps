@@ -1,0 +1,16 @@
+scripts/build.sh --dry-run            # Linux/macOS
+scripts/build.sh --bundles rpm        # só o RPM
+scripts\build.cmd -Bundles nsis       # Windows
+
+
+Nos outros sistemas, os dados vão para:
+- macOS: ~/Library/Application Support/com.simheatmaps.desktop/
+- Windows: %APPDATA%\com.simheatmaps.desktop\
+
+
+- Linux, build completa: terminou em cerca de 1min30 e gerou release/0.1.0/linux-x86_64/ com:
+  - .deb e .rpm, 3 MB cada
+  - .AppImage, 110 MB, porque inclui as bibliotecas do WebKit
+  - sha256sum -c confere os três arquivos
+- --dry-run e mensagens de erro: testados (formato inválido, opção desconhecida, --universal fora do macOS, opção sem valor).
+- macOS e Windows: não executados. O build.ps1 não pôde ser testado nem quanto à sintaxe, porque não há PowerShell nesta máquina. Na primeira execução no Windows, use -DryRun.

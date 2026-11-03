@@ -1,0 +1,11 @@
+node_modules/
+dist/
+tmp/__pycache__/
+log/*.log*
+src-tauri/target/
+src-tauri/gen/schemas/
+*.tsbuildinfo
+tmp/out/
+release/
+.vscode/
+documents/

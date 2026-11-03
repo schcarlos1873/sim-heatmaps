@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estilo do App"
+  short_description: "Aplicativos com paleta neutra e temas claro e escuro"
+  default_prompt: "Use $sim-heatmaps-style para desenvolver meu aplicativo com cores e estilo visual."

@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Tokens semânticos (sim-heatmaps-style): paleta neutra com accent azul. */
+:root {
+  color-scheme: light;
+  --background: #ffffff;
+  --sidebar: #f9f9f9;
+  --surface: #f4f4f4;
+  --surface-hover: #eaeaea;
+  --text-primary: #171717;
+  --text-secondary: #595959;
+  --border: #d9d9d9;
+  --control-border: #767676;
+  --accent: #1d4ed8;
+  --accent-hover: #1e40af;
+  --on-accent: #ffffff;
+  --danger: #b42318;
+  --on-danger: #ffffff;
+  --ok-bg: #e5f5ea;
+  --ok-fg: #14532d;
+  --warn-bg: #fdf0c4;
+  --warn-fg: #6b3e0a;
+  --bad-bg: #fde2e0;
+  --bad-fg: #8a1c14;
+  --ok-dot: #16a34a;
+  --warn-dot: #d97706;
+  --bad-dot: #dc2626;
+  /* Gráficos (skill dataviz). As cores do Contour Map são configuradas em Configurações. */
+  --viz-surface: #fcfcfb;
+  --viz-grid: #e1e0d9;
+  --viz-axis: #c3c2b7;
+  --viz-ink-muted: #6b6a65;
+  --viz-series-1: #2a78d6;
+  --viz-series-2: #eb6834;
+  --viz-nodata: #c3c2b7;
+  --viz-good: #0ca30c;
+  --viz-warning: #d99a00;
+  --viz-critical: #d03b3b;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #212121;
+  --sidebar: #171717;
+  --surface: #2f2f2f;
+  --surface-hover: #3a3a3a;
+  --text-primary: #ececec;
+  --text-secondary: #b4b4b4;
+  --border: #484848;
+  --control-border: #8a8a8a;
+  --accent: #8ab4f8;
+  --accent-hover: #a8c7fa;
+  --on-accent: #0b1f3a;
+  --danger: #ffb4ab;
+  --on-danger: #3b0a06;
+  --ok-bg: #133420;
+  --ok-fg: #a7f3c0;
+  --warn-bg: #3a2c08;
+  --warn-fg: #fde68a;
+  --bad-bg: #4a1512;
+  --bad-fg: #ffc7c0;
+  --ok-dot: #4ade80;
+  --warn-dot: #fbbf24;
+  --bad-dot: #f87171;
+  --viz-surface: #1a1a19;
+  --viz-grid: #2c2c2a;
+  --viz-axis: #383835;
+  --viz-ink-muted: #a3a29b;
+  --viz-series-1: #3987e5;
+  --viz-series-2: #d95926;
+  --viz-nodata: #52514e;
+  --viz-good: #0ca30c;
+  --viz-warning: #fab219;
+  --viz-critical: #e66767;
+}
+
+@theme inline {
+  --color-bg: var(--background);
+  --color-sidebar: var(--sidebar);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-fg: var(--text-primary);
+  --color-muted: var(--text-secondary);
+  --color-border: var(--border);
+  --color-control: var(--control-border);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-on-accent: var(--on-accent);
+  --color-danger: var(--danger);
+  --color-on-danger: var(--on-danger);
+  --color-ok-bg: var(--ok-bg);
+  --color-ok-fg: var(--ok-fg);
+  --color-warn-bg: var(--warn-bg);
+  --color-warn-fg: var(--warn-fg);
+  --color-bad-bg: var(--bad-bg);
+  --color-bad-fg: var(--bad-fg);
+  --color-ok-dot: var(--ok-dot);
+  --color-warn-dot: var(--warn-dot);
+  --color-bad-dot: var(--bad-dot);
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-bg text-fg font-sans antialiased;
+  font-size: 15px;
+}
+
+/* Barras de rolagem acompanham o tema (sem isso ficam claras no tema escuro). */
+* {
+  scrollbar-color: var(--control-border) transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+dialog::backdrop {
+  background: rgb(0 0 0 / 0.45);
+}

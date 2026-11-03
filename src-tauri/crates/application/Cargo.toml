@@ -1,0 +1,12 @@
+[package]
+name = "application"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+domain.workspace = true
+chrono.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+rand.workspace = true
